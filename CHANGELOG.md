@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Stivan-Lucas/omninexus-agent/compare/v1.0.0...v1.1.0) (2026-02-27)
+
+
+### Features
+
+* estabiliza processo de build e anexos de release ([bd0b04a](https://github.com/Stivan-Lucas/omninexus-agent/commit/bd0b04a9bf6ffd52da5b0e16dc0bcce1365cdb98))
+
 # 1.0.0 (2026-02-27)
 
 
