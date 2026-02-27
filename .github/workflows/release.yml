@@ -21,6 +21,10 @@ jobs:
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
 
+      # ADICIONE ESTE PASSO: Ele guarda o que já foi compilado
+      - name: Rust Cache
+        uses: Swatinem/rust-cache@v2
+
       - name: Setup Node/Bun
         uses: actions/setup-node@v4
         with:
