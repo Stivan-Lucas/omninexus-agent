@@ -30,9 +30,10 @@
         "assets": [
           {
             "path": "target/release/agent.exe",
-            "label": "Agent Executable (Windows)"
+            "label": "Omninexus Agent (Windows)"
           }
-        ]
+        ],
+        "successComment": "This release is deployed! Download the agent below."
       }
     ]
   ]
