@@ -9,7 +9,7 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "powershell -Command \"(Get-Content Cargo.toml) -replace 'version = \\\"[0-9.]+\\\"', 'version = \\\"${nextRelease.version}\\\"' | Set-Content Cargo.toml\" && cargo build --release"
+        "prepareCmd": "powershell -Command \"(Get-Content Cargo.toml) -replace '(?m)^version\\s*=\\s*\\\"[0-9.]+\\\"', 'version = \\\"${nextRelease.version}\\\"' | Set-Content Cargo.toml\" && cargo build --release"
       }
     ],
     [
