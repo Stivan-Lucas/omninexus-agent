@@ -1,0 +1,39 @@
+{
+  "branches": [
+    "main"
+  ],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "powershell -Command \"(Get-Content Cargo.toml) -replace 'version = \\\"[0-9.]+\\\"', 'version = \\\"${nextRelease.version}\\\"' | Set-Content Cargo.toml\" && cargo build --release"
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "Cargo.toml",
+          "Cargo.lock",
+          "CHANGELOG.md",
+          "package.json"
+        ],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "assets": [
+          {
+            "path": "target/release/agent.exe",
+            "label": "Agent Executable (Windows)"
+          }
+        ]
+      }
+    ]
+  ]
+}
